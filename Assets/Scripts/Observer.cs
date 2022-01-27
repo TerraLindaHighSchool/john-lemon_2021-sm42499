@@ -5,24 +5,26 @@ using UnityEngine;
 public class Observer : MonoBehaviour
 {
     public Transform player;
+    public GameObject gameEnding;
 
     bool m_IsPlayerInRange;
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.transform == player)
         {
             m_IsPlayerInRange = true;
         }
+    }
 
-        void OnTriggerEnter (Collider other)
-        {
+    void OnTriggerExit (Collider other)
+    {
             if (other.transform == player)
             {
                 m_IsPlayerInRange = false;
             }
-        }
     }
+
     // Start is called before the first frame update
     void Start()
     {
