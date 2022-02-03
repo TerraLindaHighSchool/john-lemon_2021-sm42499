@@ -69,9 +69,10 @@ public class GameEnding : MonoBehaviour
         
     }
 
-    private void CaughtPlayer()
+    public void CaughtPlayer()
     {
         m_IsPlayerCaught = true;
+        Debug.Log("Line 75");
     }
 
 }
