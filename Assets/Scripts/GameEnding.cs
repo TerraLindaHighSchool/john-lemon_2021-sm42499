@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿#if Unity_Editor
+using UnityEditor
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,7 +45,13 @@ public class GameEnding : MonoBehaviour
           }
           else
           {
+#if UNITY_EDITOR
+                //Stop playing the scene
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
                 Application.Quit();
+#endif
+
           }
         }
     }
